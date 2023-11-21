@@ -1,0 +1,58 @@
+<mat-progress-bar mode="indeterminate" color="accent" *ngIf="loading"></mat-progress-bar>
+
+<div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+  <mat-form-field>
+    <input matInput placeholder="Поиск">
+    <button mat-icon-button matSuffix>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-raised-button routerLinkActive="list-item-active" routerLink="/persons-add">Добавить</button>
+</div>
+
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Имя столбца -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> Имя </th>
+      <td mat-cell *matCellDef="let person"> {{ person.firstName }} </td>
+    </ng-container>
+
+    <!-- Фамилия столбца -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Фамилия </th>
+      <td mat-cell *matCellDef="let person"> {{ person.lastName }} </td>
+    </ng-container>
+
+    <!-- Адрес столбца -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Адрес </th>
+      <td mat-cell *matCellDef="let person"> {{ person.address }} </td>
+    </ng-container>
+
+    <!-- Телефон столбца -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef> Телефон </th>
+      <td mat-cell *matCellDef="let person"> {{ person.phone }} </td>
+    </ng-container>
+
+    <!-- Пол столбца -->
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> Пол </th>
+      <td mat-cell *matCellDef="let person"> {{ person.gender }} </td>
+    </ng-container>
+
+    <!-- Дата рождения столбца -->
+    <ng-container matColumnDef="birthDate">
+      <th mat-header-cell *matHeaderCellDef> Дата рождения </th>
+      <td mat-cell *matCellDef="let person"> {{ person.birthDate | date }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>

@@ -1,0 +1,21 @@
+<div>
+  <p>
+    <mat-card>
+        <highcharts-chart
+          [Highcharts]="HighchartsCredit"
+          [options]="chartCreditOptions"
+          style="width: 100%; display: block;">
+        </highcharts-chart>
+    </mat-card>
+  </p>
+
+<p>
+  <mat-card>
+      <highcharts-chart
+        [Highcharts]="HighchartsOverCredit"
+        [options]="chartOverCreditOptions"
+        style="width: 100%; display: block; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      </highcharts-chart>
+  </mat-card>
+</p>
+</div>
