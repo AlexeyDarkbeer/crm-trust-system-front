@@ -1,4 +1,6 @@
-<mat-progress-bar mode="indeterminate" color="accent" *ngIf="loading"></mat-progress-bar>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+</div>
 
 <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
   <mat-form-field>

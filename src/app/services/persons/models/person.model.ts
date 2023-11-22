@@ -1,4 +1,4 @@
-export interface Person {
+export interface PersonModel {
   id: number;
   firstName: string;
   lastName: string;
@@ -6,4 +6,29 @@ export interface Person {
   phone: string;
   gender: string;
   birthDate: Date;
+  passport: PassportModel;
+  job: JobModel;
+  credits: CreditModel[];
 }
+
+export interface PassportModel {
+  series: string;
+  number: string;
+  issuedBy: string;
+  issueDate: Date;
+  departmentNumber: string;
+}
+
+export interface JobModel {
+  companyName: string;
+  position: string;
+  startDate: Date;
+}
+
+export interface CreditModel {
+  creditType: string;
+  amount: number;
+  startDate: Date;
+  endDate: Date;
+}
+

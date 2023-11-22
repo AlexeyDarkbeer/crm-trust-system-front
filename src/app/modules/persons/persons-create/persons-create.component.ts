@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PersonService} from "../../../services/persons/person.service";
-import {Person} from "../../../services/persons/models/person.model";
+import {PersonModel} from "../../../services/persons/models/person.model";
 
 @Component({
   selector: 'app-persons-create',

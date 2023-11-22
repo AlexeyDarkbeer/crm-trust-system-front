@@ -1,0 +1,84 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+</div>
+<div *ngIf="!loading">
+
+  <mat-card class="user-info-card">
+    <mat-card-header>
+      <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
+      <mat-card-subtitle>ID: {{ user.id }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content fxLayout="row">
+      <div fxFlex="50" class="card-section">
+        <h3>Паспортные данные</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>Серия</mat-label>
+          <input matInput [(ngModel)]="user.passport.series" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Номер</mat-label>
+          <input matInput [(ngModel)]="user.passport.number" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Выдан</mat-label>
+          <input matInput [(ngModel)]="user.passport.issuedBy" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Дата выдачи</mat-label>
+          <input matInput [(ngModel)]="user.passport.issueDate" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Номер отделения</mat-label>
+          <input matInput [(ngModel)]="user.passport.departmentNumber" disabled>
+        </mat-form-field>
+      </div>
+
+      <div fxFlex="50" class="card-section">
+        <h3>Информация о работе</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>Компания</mat-label>
+          <input matInput [(ngModel)]="user.job.companyName" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Должность</mat-label>
+          <input matInput [(ngModel)]="user.job.position" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Дата начала работы</mat-label>
+          <input matInput [(ngModel)]="user.job.startDate" disabled>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content>
+      <h3>Информация о кредитах</h3>
+      <table mat-table [dataSource]="user.credits">
+        <!-- Define the columns -->
+        <ng-container matColumnDef="creditType">
+          <th mat-header-cell *matHeaderCellDef> Тип кредита </th>
+          <td mat-cell *matCellDef="let credit"> {{ credit.creditType }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef> Сумма </th>
+          <td mat-cell *matCellDef="let credit"> {{ credit.amount | currency:'RUB':'symbol':'1.2-2' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="startDate">
+          <th mat-header-cell *matHeaderCellDef> Начало </th>
+          <td mat-cell *matCellDef="let credit"> {{ credit.startDate | date }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="endDate">
+          <th mat-header-cell *matHeaderCellDef> Окончание </th>
+          <td mat-cell *matCellDef="let credit"> {{ credit.endDate | date }} </td>
+        </ng-container>
+
+        <!-- Assign the columns to the table -->
+        <tr mat-header-row *matHeaderRowDef="['creditType', 'amount', 'startDate', 'endDate']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['creditType', 'amount', 'startDate', 'endDate'];"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

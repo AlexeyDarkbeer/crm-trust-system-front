@@ -1,0 +1,25 @@
+.user-info-card {
+  flex: 1; /* Карточка занимает всю доступную ширину */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-section {
+  flex: 1; /* Каждая секция внутри карточки занимает доступное пространство */
+  padding: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+input[matInput] {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
