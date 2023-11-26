@@ -5,7 +5,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import {PersonModel} from "../../../services/persons/models/person.model";
 import {PersonService} from "../../../services/persons/person.service";
 import {delay} from "rxjs";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-persons-list',
@@ -13,7 +12,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./persons-list.component.scss']
 })
 export class PersonsListComponent implements OnInit{
-  // @ts-ignore
   public dataSource: MatTableDataSource<PersonModel>;
 
   public loading : boolean = true;

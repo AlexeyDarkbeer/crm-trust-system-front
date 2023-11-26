@@ -10,8 +10,8 @@ export class PersonService {
   private personModels: PersonModel[] = [
     {
       id: 1,
-      firstName: 'Михаил',
-      lastName: 'Ромашов',
+      firstName: 'Алексей',
+      lastName: 'Попов',
       address: 'ул. Ленина, 123',
       phone: '123-456-7890',
       gender: 'Мужской',
@@ -19,19 +19,19 @@ export class PersonService {
       passport: {
         series: '1234',
         number: '567890',
-        issuedBy: 'Отделение полиции №1',
+        issuedBy: 'УМВД России по Оренбургской области',
         issueDate: new Date('2010-01-01'),
         departmentNumber: '123-456',
       },
       job: {
         companyName: 'ООО Работа',
-        position: 'Системный аналитик',
+        position: 'Разработчик',
         startDate: new Date('2023-01-01'),
       },
       credits: [
         {
-          creditType: 'Кредит на плойку',
-          amount: 120000,
+          creditType: 'Кредит на пиво',
+          amount: 200000,
           startDate: new Date('2022-01-01'),
           endDate: new Date('2030-01-01'),
         },

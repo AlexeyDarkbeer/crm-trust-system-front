@@ -5,6 +5,9 @@ import {DashboardComponent} from "./modules/dashboard/dashboard.component";
 import {PersonsListComponent} from "./modules/persons/persons-list/persons-list.component";
 import {PersonsCreateComponent} from "./modules/persons/persons-create/persons-create.component";
 import {PersonDetailsComponent} from "./modules/persons/person-details/person-details.component";
+import {
+  BusinessProccessListComponent
+} from "./modules/businessProcesses/business-proccess-list/business-proccess-list.component";
 
 const routes: Routes = [
   {
@@ -26,6 +29,10 @@ const routes: Routes = [
       {
         path: 'persons-details',
         component: PersonDetailsComponent
+      },
+      {
+        path: 'business-processes',
+        component: BusinessProccessListComponent
       }
     ]
   }
