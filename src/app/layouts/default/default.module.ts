@@ -38,6 +38,7 @@ import {
 } from "../../modules/scoring/scoring-parameter-form/scoring-parameter-form.component";
 import {PersonDetailsComponent} from "../../modules/persons/person-details/person-details.component";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {AuthService} from "../../services/auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -78,4 +79,5 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatProgressSpinnerModule,
   ]
 })
-export class DefaultModule { }
+export class DefaultModule {
+}

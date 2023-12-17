@@ -8,6 +8,7 @@ import {PersonDetailsComponent} from "./modules/persons/person-details/person-de
 import {
   BusinessProccessListComponent
 } from "./modules/businessProcesses/business-proccess-list/business-proccess-list.component";
+import {AuthComponent} from "./modules/auth/auth.component";
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'business-processes',
         component: BusinessProccessListComponent
+      },
+      {
+        path: 'auth',
+        component: AuthComponent
       }
     ]
   }

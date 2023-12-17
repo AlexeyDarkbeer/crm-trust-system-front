@@ -1,7 +1,7 @@
 <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
 
 <mat-sidenav-container autosize>
-    <mat-sidenav #sidenav mode="side" [opened]="sideBarOpen">
+    <mat-sidenav #sidenav mode="side" [opened]="sideBarOpen" *ngIf="isAuthenticated()">
         <app-sidebar></app-sidebar>
     </mat-sidenav>
 

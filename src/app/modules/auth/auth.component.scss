@@ -1,0 +1,21 @@
+/* login.component.css */
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.login-card {
+  width: 400px;
+}
+
+.login-header{
+  margin-bottom: 10px;
+}
+
+.full-width {
+  width: 100%;
+}

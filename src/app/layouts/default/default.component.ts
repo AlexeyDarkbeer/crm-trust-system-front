@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthService} from "../../services/auth/auth.service";
 
 @Component({
   selector: 'app-default',
@@ -6,9 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./default.component.scss']
 })
 export class DefaultComponent {
-    sideBarOpen: boolean = true;
+  sideBarOpen: boolean = true;
 
-    sideBarToggler(){
-        this.sideBarOpen = !this.sideBarOpen;
-    }
+  constructor(private authService: AuthService) {
+  }
+
+  sideBarToggler(){
+    this.sideBarOpen = !this.sideBarOpen;
+  }
+
+  isAuthenticated(): boolean{
+    return this.authService.isAuthenticatedUser();
+  }
 }

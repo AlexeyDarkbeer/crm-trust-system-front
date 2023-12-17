@@ -10,11 +10,13 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AuthComponent } from './modules/auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
