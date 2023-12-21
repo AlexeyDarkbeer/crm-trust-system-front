@@ -15,7 +15,16 @@ export class PersonsListComponent implements OnInit{
   public dataSource: MatTableDataSource<PersonModel>;
 
   public loading : boolean = true;
-  public displayedColumns: string[] = ['firstName', 'lastName', 'address', 'phone', 'gender', 'birthDate'];
+  public displayedColumns: string[] = [
+    'firstName',
+    'lastName',
+    'middleName',
+    'gender',
+    'birthDate',
+    'companyName',
+    'position',
+    'cluster'
+  ];
 
   // @ts-ignore
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -24,10 +33,10 @@ export class PersonsListComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.personService.getPeople()
-      .pipe(delay(1000))
-      .subscribe((people) => {
-        this.dataSource = new MatTableDataSource(people);
+    this.personService.getPersons()
+      .pipe(delay(100))
+      .subscribe((data: PersonModel[]) => {
+        this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
         this.loading = false;
       });

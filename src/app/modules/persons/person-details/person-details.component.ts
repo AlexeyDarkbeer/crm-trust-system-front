@@ -17,7 +17,7 @@ export class PersonDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.personService.getPeople()
+    this.personService.getPersons()
       .pipe(
         delay(500)
       )
@@ -30,7 +30,6 @@ export class PersonDetailsComponent implements OnInit {
   }
 
   formatCurrency(amount: number): string {
-    // Добавьте дополнительную логику по необходимости, например, учет валюты
     return amount.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' });
   }
 

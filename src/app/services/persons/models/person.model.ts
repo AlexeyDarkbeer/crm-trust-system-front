@@ -1,14 +1,14 @@
 export interface PersonModel {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
-  address: string;
-  phone: string;
+  middleName: string;
   gender: string;
-  birthDate: Date;
+  cluster: number;
   passport: PassportModel;
-  job: JobModel;
-  credits: CreditModel[];
+  actualJob: JobModel;
+  loans: LoanModel[];
+  contacts: ContactModel[];
 }
 
 export interface PassportModel {
@@ -17,18 +17,23 @@ export interface PassportModel {
   issuedBy: string;
   issueDate: Date;
   departmentNumber: string;
+  birthDate: Date;
 }
 
 export interface JobModel {
   companyName: string;
   position: string;
+  salaryAmount: number;
   startDate: Date;
 }
 
-export interface CreditModel {
+export interface LoanModel {
   creditType: string;
   amount: number;
   startDate: Date;
   endDate: Date;
 }
 
+export interface ContactModel{
+  phoneNumber: string;
+}
