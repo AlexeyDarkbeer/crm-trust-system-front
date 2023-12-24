@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import {PersonModel} from "../../../services/persons/models/person.model";
 import {PersonService} from "../../../services/persons/person.service";
-import {delay} from "rxjs";
 
 @Component({
   selector: 'app-persons-list',
@@ -22,8 +21,7 @@ export class PersonsListComponent implements OnInit{
     'gender',
     'birthDate',
     'companyName',
-    'position',
-    'cluster'
+    'position'
   ];
 
   // @ts-ignore
@@ -34,7 +32,6 @@ export class PersonsListComponent implements OnInit{
 
   ngOnInit() {
     this.personService.getPersons()
-      .pipe(delay(100))
       .subscribe((data: PersonModel[]) => {
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;

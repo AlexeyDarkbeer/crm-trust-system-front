@@ -1,1 +1,60 @@
-<p>scoring-form works!</p>
+<!--&lt;!&ndash; entity-form.component.html &ndash;&gt;-->
+
+<!--<form [formGroup]="entityForm" (ngSubmit)="onSubmit()" class="example-form">-->
+<!--  <mat-form-field>-->
+<!--    <mat-label>Name:</mat-label>-->
+<!--    <input matInput formControlName="name" />-->
+<!--  </mat-form-field>-->
+
+<!--  <mat-form-field>-->
+<!--    <mat-label>Description:</mat-label>-->
+<!--    <input matInput formControlName="description" />-->
+<!--  </mat-form-field>-->
+
+<!--  <div formArrayName="parameters">-->
+<!--    <div-->
+<!--      *ngFor="let parameter of entityForm.get('parameters').controls; let i = index"-->
+<!--      class="parameter-group"-->
+<!--    >-->
+<!--      <mat-form-field>-->
+<!--        <mat-label>Parameter Name:</mat-label>-->
+<!--        <input matInput formControlName="name" />-->
+<!--      </mat-form-field>-->
+
+<!--      <mat-form-field>-->
+<!--        <mat-label>Parameter Description:</mat-label>-->
+<!--        <input matInput formControlName="description" />-->
+<!--      </mat-form-field>-->
+
+<!--      <div formArrayName="intervals">-->
+<!--        <div-->
+<!--          *ngFor="let interval of parameter.get('intervals').controls; let j = index"-->
+<!--          class="interval-group"-->
+<!--        >-->
+<!--          <mat-form-field>-->
+<!--            <mat-label>Weight:</mat-label>-->
+<!--            <input matInput formControlName="weight" />-->
+<!--          </mat-form-field>-->
+
+<!--          <mat-form-field>-->
+<!--            <mat-label>Min Value:</mat-label>-->
+<!--            <input matInput formControlName="minValue" />-->
+<!--          </mat-form-field>-->
+
+<!--          <mat-form-field>-->
+<!--            <mat-label>Max Value:</mat-label>-->
+<!--            <input matInput formControlName="maxValue" />-->
+<!--          </mat-form-field>-->
+<!--        </div>-->
+<!--        <button mat-icon-button type="button" (click)="addInterval(i)">-->
+<!--          <mat-icon>add</mat-icon>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <button mat-icon-button type="button" (click)="addParameter()">-->
+<!--      <mat-icon>add</mat-icon>-->
+<!--    </button>-->
+<!--  </div>-->
+
+<!--  <button mat-raised-button type="submit">Submit</button>-->
+<!--</form>-->

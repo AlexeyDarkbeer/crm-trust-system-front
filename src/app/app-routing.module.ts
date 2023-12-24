@@ -9,6 +9,8 @@ import {
   BusinessProccessListComponent
 } from "./modules/businessProcesses/business-proccess-list/business-proccess-list.component";
 import {AuthComponent} from "./modules/auth/auth.component";
+import {CalcPersonListComponent} from "./modules/scoring/calc-person-list/calc-person-list.component";
+import {ScoringListComponent} from "./modules/scoring/scoring-list/scoring-list.component";
 
 const routes: Routes = [
   {
@@ -32,13 +34,21 @@ const routes: Routes = [
         component: PersonDetailsComponent
       },
       {
+        path: 'persons-scorings',
+        component: CalcPersonListComponent
+      },
+      {
+        path: 'scoring-models',
+        component: ScoringListComponent
+      },
+      {
         path: 'business-processes',
         component: BusinessProccessListComponent
       },
       {
         path: 'auth',
         component: AuthComponent
-      }
+      },
     ]
   }
 ];

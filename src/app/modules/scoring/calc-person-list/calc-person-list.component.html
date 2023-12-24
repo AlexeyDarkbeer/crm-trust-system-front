@@ -1,0 +1,62 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+  <mat-form-field>
+    <input matInput placeholder="Поиск">
+    <button mat-icon-button matSuffix>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="fullName">
+      <th mat-header-cell *matHeaderCellDef> ФИО клиента </th>
+      <td mat-cell *matCellDef="let person"> {{ person.fullName }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="personAge">
+      <th mat-header-cell *matHeaderCellDef> Возраст клиента </th>
+      <td mat-cell *matCellDef="let person"> {{ person.personAge }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="currentJobSalary">
+      <th mat-header-cell *matHeaderCellDef> Сумма з/п </th>
+      <td mat-cell *matCellDef="let person"> {{ person.currentJobSalary  | currency:'RUB':'symbol':'1.2-2' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="currentJobMonths">
+      <th mat-header-cell *matHeaderCellDef> Стаж работы </th>
+      <td mat-cell *matCellDef="let person"> {{ person.currentJobMonths }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="loanAmount">
+      <th mat-header-cell *matHeaderCellDef> Сумма кредита </th>
+      <td mat-cell *matCellDef="let person"> {{ person.loanAmount  | currency:'RUB':'symbol':'1.2-2' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="loanMonths">
+      <th mat-header-cell *matHeaderCellDef> Срок кредита </th>
+      <td mat-cell *matCellDef="let person"> {{ person.loanMonths }} мес. </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef> Скоринговый балл </th>
+      <td mat-cell *matCellDef="let person"> {{ person.score }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="result">
+      <th mat-header-cell *matHeaderCellDef> Решение о выдаче </th>
+      <td mat-cell *matCellDef="let person"> {{ person.score < 200 ? 'Выдать' : 'Не выдавать' }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>

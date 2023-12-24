@@ -14,7 +14,7 @@ export class PersonService {
   }
 
   getPersons(): Observable<PersonModel[]> {
-    const url = `${this.baseUrl}Person/GetPersonClusters/GetPersonClusters`
+    const url = `${this.baseUrl}Person/GetAll`
     return this.httpClient.get<PersonModel[]>(url);
   }
 

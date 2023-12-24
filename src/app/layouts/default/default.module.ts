@@ -31,14 +31,12 @@ import {
 import {ScoringListComponent} from "../../modules/scoring/scoring-list/scoring-list.component";
 import {ScoringFormComponent} from "../../modules/scoring/scoring-form/scoring-form.component";
 import {
-  ScoringParameterListComponent
-} from "../../modules/scoring/scoring-parameter-list/scoring-parameter-list.component";
-import {
   ScoringParameterFormComponent
 } from "../../modules/scoring/scoring-parameter-form/scoring-parameter-form.component";
 import {PersonDetailsComponent} from "../../modules/persons/person-details/person-details.component";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {AuthService} from "../../services/auth/auth.service";
+import {CalcPersonListComponent} from "../../modules/scoring/calc-person-list/calc-person-list.component";
 
 @NgModule({
   declarations: [
@@ -51,8 +49,8 @@ import {AuthService} from "../../services/auth/auth.service";
     BusinessProccessFormComponent,
     ScoringListComponent,
     ScoringFormComponent,
-    ScoringParameterListComponent,
-    ScoringParameterFormComponent
+    ScoringParameterFormComponent,
+    CalcPersonListComponent
   ],
   imports: [
     CommonModule,

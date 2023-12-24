@@ -1,1 +1,41 @@
-<p>scoring-list works!</p>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+</div>
+
+<div *ngIf="!loading">
+  <mat-card class="scoring-info-card">
+    <mat-card-header>
+      <mat-card-title>{{ scoringModel.name }}</mat-card-title>
+      <mat-card-subtitle>{{ scoringModel.description }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <h3>Параметры скоринга</h3>
+      <div *ngFor="let parameter of scoringModel.parameters">
+        <h2>{{ parameter.description }}</h2>
+        <mat-divider></mat-divider>
+
+        <table mat-table [dataSource]="parameter.intervals">
+          <!-- Define the columns -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Вес </th>
+            <td mat-cell *matCellDef="let interval"> {{ interval.weight }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="minValue">
+            <th mat-header-cell *matHeaderCellDef> Мин. значение </th>
+            <td mat-cell *matCellDef="let interval"> {{ interval.minValue }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="maxValue">
+            <th mat-header-cell *matHeaderCellDef> Макс. значение </th>
+            <td mat-cell *matCellDef="let interval"> {{ interval.maxValue }} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="['weight', 'minValue', 'maxValue']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['weight', 'minValue', 'maxValue'];"></tr>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
